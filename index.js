@@ -5,6 +5,18 @@ const PORT = 3000;
 
 app.use(express.json());
 
+const server = app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
+
+process.on("SIGINT", () => {
+    console.log("Shutting down server...");
+    server.close(() => {
+        console.log("Server closed.");
+        process.exit(0);
+    });
+});
+
 app.get("/vaccines", (req, res) => {
     return res.send(allVaccines);
 });
@@ -21,14 +33,15 @@ app.get("/vaccines/:id", (req, res) => {
     return res.send('A vacina não existe');
 });
 
-app.listen(PORT, () => {
-    console.log('Listen port')
-})
+app.get("/vaccines", (req, res) => {
+    return res.send(allVaccines);
+});
 
 const allVaccines = [
     {
         id: "1",
-        name: "BGC", // É pública e privada?
+        name: "BGC",
+        coveredBy: [],
         types: [
             {
                 name: "PB",
@@ -44,6 +57,7 @@ const allVaccines = [
     {
         id: "2",
         name: "Hepatite B",
+        coveredBy: [],
         types: [
             {
                 name: "PB",
@@ -59,6 +73,7 @@ const allVaccines = [
     {
         id: "3",
         name: "Hepatite B",
+        coveredBy: ["6", "8"],
         types: [
             {
                 name: "PB",
@@ -74,6 +89,7 @@ const allVaccines = [
     {
         id: "4",
         name: "Rotavirus",
+        coveredBy: [],
         types: [
             {
                 name: "PB",
@@ -89,6 +105,7 @@ const allVaccines = [
     {
         id: "5",
         name: "Pneumocócica",
+        coveredBy: [],
         types: [
             {
                 name: "PB",
@@ -104,6 +121,7 @@ const allVaccines = [
     {
         id: "6",
         name: "Pentavalente",
+        coveredBy: ["8"],
         types: [
             {
                 name: "PB",
@@ -119,6 +137,7 @@ const allVaccines = [
     {
         id: "7",
         name: "VIP Poliomelite",
+        coveredBy: ["6", "8"],
         types: [
             {
                 name: "PB",
@@ -130,6 +149,7 @@ const allVaccines = [
     {
         id: "8",
         name: "Hexavalente",
+        coveredBy: [],
         types: [
             {
                 name: "PV",
@@ -141,6 +161,7 @@ const allVaccines = [
     {
         id: "9",
         name: "Meningocócica B",
+        coveredBy: [],
         types: [
             {
                 name: "PV",
@@ -152,6 +173,7 @@ const allVaccines = [
     {
         id: "10",
         name: "Meningocócica C",
+        coveredBy: ["10"],
         types: [
             {
                 name: "PB",
@@ -163,6 +185,7 @@ const allVaccines = [
     {
         id: "11",
         name: "Meningocócica ACWY", // Adicionar pública?
+        coveredBy: [],
         types: [
             {
                 name: "PV",
