@@ -1,10 +1,13 @@
 const onBirthVaccines = require('../data/vaccines/on_birth.js');
 const secondMotnhsVaccines = require('../data/vaccines/second_months.js');
-const fourthMonthVaccines = require('../data/vaccines//fourth_month.js');
+const fourthMonthVaccines = require('../data/vaccines/fourth_month.js');
+const fifthMonthVaccines = require('../data/vaccines/fifth_month.js');
+const sixthMonthVaccines = require('../data/vaccines/sixth_month.js');
+const ninthMonthVaccines = require('../data/vaccines/ninth_month.js');
 
 
 function getAllVaccines() {
-    return [].concat(onBirthVaccines, secondMotnhsVaccines, fourthMonthVaccines);
+    return [].concat(onBirthVaccines, secondMotnhsVaccines, fourthMonthVaccines, fifthMonthVaccines, sixthMonthVaccines, ninthMonthVaccines,);
 }
 
 function getVaccineById(id) {

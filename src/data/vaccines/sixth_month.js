@@ -1,8 +1,8 @@
-const fourthMonthVaccines = [
+const sixthMonthVaccines = [
     {
-        id: "12",
+        id: "24",
         name: "Hepatite B",
-        coveredBy: ["15", "17"],
+        coveredBy: ["27", "29"],
         types: [
             {
                 name: "PB",
@@ -13,10 +13,10 @@ const fourthMonthVaccines = [
                 encompass: [],
             }
         ],
-        whenApplyInMonths: 4
+        whenApplyInMonths: 6
     },
     {
-        id: "13",
+        id: "25",
         name: "Rotavirus",
         coveredBy: [],
         types: [
@@ -29,10 +29,10 @@ const fourthMonthVaccines = [
                 encompass: [],
             }
         ],
-        whenApplyInMonths: 4
+        whenApplyInMonths: 6
     },
     {
-        id: "14",
+        id: "26",
         name: "Pneumocócica",
         coveredBy: [],
         types: [
@@ -45,50 +45,50 @@ const fourthMonthVaccines = [
                 encompass: [],
             }
         ],
-        whenApplyInMonths: 4
+        whenApplyInMonths: 6
     },
     {
-        id: "15",
+        id: "27",
         name: "Pentavalente",
-        coveredBy: ["17"],
+        coveredBy: ["29"],
         types: [
             {
                 name: "PB",
-                encompass: ["12", "16"],
+                encompass: ["24", "28"],
             },
             {
                 name: "PV",
                 encompass: [], // PRIVADA ENGLOBA POLI?
             }
         ],
-        whenApplyInMonths: 4
+        whenApplyInMonths: 6
     },
     {
-        id: "16",
+        id: "28",
         name: "VIP Poliomelite",
-        coveredBy: ["15", "17"],
+        coveredBy: ["27", "29"],
         types: [
             {
                 name: "PB",
                 encompass: [],
             },
         ],
-        whenApplyInMonths: 4
+        whenApplyInMonths: 6
     },
     {
-        id: "17",
+        id: "29",
         name: "Hexavalente",
         coveredBy: [],
         types: [
             {
                 name: "PV",
-                encompass: ["12", "16", "15"]
+                encompass: ["24", "28", "27"]
             }
         ],
-        whenApplyInMonths: 4
+        whenApplyInMonths: 6
     },
     {
-        id: "18",
+        id: "30",
         name: "Meningocócica B",
         coveredBy: [],
         types: [
@@ -97,32 +97,49 @@ const fourthMonthVaccines = [
                 encompass: []
             }
         ],
-        whenApplyInMonths: 4
+        whenApplyInMonths: 6
     },
     {
-        id: "19",
+        id: "31",
         name: "Meningocócica C",
-        coveredBy: ["19"],
+        coveredBy: ["31"],
         types: [
             {
                 name: "PB",
                 encompass: []
             }
         ],
-        whenApplyInMonths: 4
+        whenApplyInMonths: 6
     },
     {
-        id: "20",
+        id: "32",
         name: "Meningocócica ACWY",
         coveredBy: [],
         types: [
             {
                 name: "PV",
-                encompass: ["19"]
+                encompass: ["31"]
             }
         ],
-        whenApplyInMonths: 4
+        whenApplyInMonths: 6
+    },
+    {
+        id: "33",
+        name: "Influenza",
+        isRequired: false,
+        coveredBy: [],
+        types: [
+            {
+                name: "PV",
+                encompass: []
+            },
+            {
+                name: "PB",
+                encompass: []
+            }
+        ],
+        whenApplyInMonths: 6
     }
 ];
 
-module.exports = fourthMonthVaccines;
+module.exports = sixthMonthVaccines;
